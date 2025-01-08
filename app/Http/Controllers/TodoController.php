@@ -47,6 +47,16 @@ class TodoController extends Controller
         }
     }
 
+    public function destroy($id) 
+    {
+        $data = Todo::destroy($id);
+        if ($data) {
+            return response()->json(['message' => 'Todo delete successfully']);
+        } else {
+            return response()->json(['message' => 'Todo delete Failed']);
+        }
+    }
+
     public function reorder(Request $request) 
     {
         $data = $request->input('todo'); // Array tugas dengan ID dan posisi baru

@@ -11,5 +11,6 @@ Route::controller(\App\Http\Controllers\TodoController::class)->group(function (
     Route::get('/task', 'index');
     Route::post('/task', 'store');
     Route::put('/task/{id}', 'update');
+    Route::delete('/task/{id}', 'destroy');
     Route::post('/task/reorder', 'reorder');
 });
